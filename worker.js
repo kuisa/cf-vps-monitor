@@ -2984,7 +2984,7 @@ async function checkWebsiteStatus(site, db, ctx) { // Added ctx for waitUntil
 
 
   try {
-    const response = await fetch(url, { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(15000) });
+    const response = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(15000) });
     newResponseTime = Date.now() - startTime;
     newStatusCode = response.status;
 
